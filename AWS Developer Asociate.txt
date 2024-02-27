@@ -90,8 +90,17 @@ these commands uses these API calls to process the request also must have valid 
 -1 WCU = 1*1Kb write per second
 -1 RCU = 2*4kb Eventually consitence reads per second 1*4kb strongly consitence reads per sec
 
+*DynamoDB On Demand Capacity - It scales up or down instantly based on application and charges do apply best for upredictable worloads, Provisioned capacity is best suited when workload is properly known and charges are in control.
+
 *DynamoDB Streams
+
+
 *DynamoDB TTL
+-Defines an expiry time for the data
+-Marked Items are going to delete in next 48hours
+-Expiry time will be expressed in epoch time
+
+
 
 *DAX
 -Fully managed in memory cache for dynamodb
