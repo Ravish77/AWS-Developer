@@ -1,0 +1,186 @@
+AWS Developer Asociate
+-------------------------
+
+
+IAM
+=======================
+*User
+*Group
+*Role
+*Policy
+*Web Identity Federation
+*Cognito
+*Inline Policy vs Managed Policy
+
+
+S3
+=======================
+*S3 Storage Classes
+*Securing S3 Buckets
+*S3 Encryption
+*CORS
+*Cloudfront
+*Athena
+
+
+
+EC2
+=======================
+
+
+
+
+RDS
+=======================
+
+
+DynamoDB
+=======================
+-Made up of tables contains items and attributes
+-supports JSON,HTML,XML
+-Primary Key
+	-Partition Key
+	-Composite Key- Partition Key+Sort Key
+-Each item can be upto 400kb 
+-Data Consistency
+	-Eventually Consistent -Default
+	-Strongly Consistent
+
+*DynamoDb Access Control
+-Using IAM we can give specific permissions to dynamodb tables.
+-Using IAM Roles we can give temp access to specific user for a single item in a table.
+
+*Indexes
+-DyanamoDb allows to run flexible quering(Quering using non primary attributes) using Local Secondary indexes and Global Secondary Indexes
+-Local Sec Indexes can be created only while creating the table.Same partition key as original table and different sort key.
+-Global Sec Indexes can be anytime with different partition key and different sort key.WCU/RCU must be same or more the primary table
+
+*SCAN vs QUERY
+-Scan
+ -Dumps out entire tables and filters out the unwanted items.
+ -ProjectionExpression Paremeter can be used 
+ -As the tables grows scan takes more time
+
+-Query
+ -Can be queried using primary key to get a specific or required items.
+ -ProjectionExpression parameter can be used to get only required attributes.
+ -Eventually consistent by default can be set to stringly consistent.
+ -More efficient then scan
+ -Results are sorted using sort key
+ -By default ascending order , can set ScanIndexForward to false change the order.
+
+*DynamoDb API calls
+	-create-table - CreateTable - creates new table
+	-put-item - PutItem -adds/replace an item
+	-get-item - GetItem
+	-update-item - UpdateItem
+	-update-table - UpdateTable
+	-list-tables - Listtables
+	-describe-table-DescribeTable
+	-scan-Scan
+	-query -Query
+	-delete-item - DeleteItem
+	-delete-table - DeleteTable
+
+these commands uses these API calls to process the request also must have valid IAM permissions.
+
+*DynamoDB Provisioned Throughput
+-Measured in Capacity Units - CU
+-While createing a table we can specify the requirements in terms of Read CU and Write CU
+-1 WCU = 1*1Kb write per second
+-1 RCU = 2*4kb Eventually consitence reads per second 1*4kb strongly consitence reads per sec
+
+*DynamoDB Streams
+*DynamoDB TTL
+
+*DAX
+-Fully managed in memory cache for dynamodb
+-Increases the performace only for the read performance up to 10x
+-Good for ready heavy workloads.
+
+
+
+
+
+
+Monitoring
+=======================
+
+
+Other Services
+=======================
+*SQS-Simple Queue Service
+-Queue is a temporary repository for messages awaiting processing.
+
+-EC2 instances will poll the queue
+
+-Scenario- Meme Website - User uploads a photo to S3 bucket - triggers lambda function which gets all information and be avaialble in message queue in SQS - EC2 will poll from SQS to add any text/ any other task and store it back to S3.
+
+-Visibility timeout- when a message is picked by one ec2 instance from SQS that msg becomes invisible and not available for other instances.That time period is called visibility timeout. This is the time that application server gets to process the message.If the message is not processed in within the time then it will be returned to queue and will be picked by other application server to process.
+
+-SQS will help to decouple the infrastructure, as all messages will not be lost until its get processed and reduce inter dependencies between components of an application
+
+-Messages can contain upto 256kb of text in any format.xml,plaintext/json etc
+
+-SQS acts as a buffer between 2 components
+
+-Resolves Scheduling issue.
+
+/***
+Key Points - 1. Pull Based 2. 256Kb of any format text data 3.Messages will be processed at least once 4. Msgs can be kept in queue from 1 minute to 14 days. 5.default retention period is 4days. 6.Distributed message queueing system allows to decouple the components of application.
+***/
+
+*SQS Queue types
+-Standard Queue
+	-Defualt ,which provides best effort ordering
+	-Unlimited no.of transcations/per second
+	-Gurantees that Msg will be delivered atleast once
+-FIFO Queue
+	-Ordering is strictly prserved
+	-300 Transactions per second
+	-Exactly once processing
+	-No Duplicates are introduced and available until customer processess.
+
+*
+
+
+*SNS-Simple Notification service
+*SES- Simple Email Service
+*Kinesis
+-
+-
+-
+-
+-
+
+*Elastic Beanstalk
+
+
+
+Encryption
+=======================
+*KMS
+*CMK
+
+
+Serverless
+=======================
+
+
+
+Developer Theory
+========================
+*CodeCommit
+*CodeBuild
+*CodeDeploy
+*CodePipeline
+*CodeArtifact
+*CloudFormation
+*CDK
+*Amplify
+
+
+
+
+
+
