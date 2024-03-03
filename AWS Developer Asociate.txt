@@ -4,10 +4,20 @@ AWS Developer Asociate
 
 IAM
 =======================
+-Helps to manage users and level of access.
+-Centralized control of the AWS account.
+-supports MFA
 *User
+ -Individual who have been granted permssion to AWS account.
+ -Each user has username , password and access to various resources.
 *Group
+ -Group of users with common set of permissions.
 *Role
+ -temporary permission to a perticular resuource.
 *Policy
+ -Document that defines one or more permissions.
+*Policy Simulator
+ -Test the policy.
 *Web Identity Federation
 *Cognito
 *Inline Policy vs Managed Policy
@@ -169,11 +179,127 @@ Key Points - 1. Pull Based 2. 256Kb of any format text data 3.Messages will be p
 Encryption
 =======================
 *KMS
-*CMK
+-Create and Manage encrpytion keys.
+-Integrated with loads of serives.
+-
+
+*CMK-Customer Master Key
+-Encrypt /decrypt data upto 4kb
+-Generate/encypt/decrypt data key
+-data key encrypts the data and CMK encrypts the data key.This is called envolupe Encryption.
+
+
+*Cerificate Management in AWS
+-Service that allows to create and manage public and private Secure Sockets Layer (SSL) /TLS-Transport Layer Security certificates.
+-Can be used with other services.
+-SSL/TLS certificate is a digital certificate that are used to verify the authenticity of a website. which enable secure connection between website and user.Also used to encrypt data in transit.
+-If ACM is going to use with cloudfront only we can use in US-EAST-1 region.
 
 
 Serverless
 =======================
+-Allows to run code on cloud with managing infrastructure.
+-Serverless architecture are Event driven and asynchronous
+-Can use AWS services as building blocks to build serverless architecture. they are loosely coupled.
+*Lamda
+-Serverless compute. 
+-Includes all Enterprise featiures
+-Its event driven , can be triggered by actiion of other services.
+*Version Control with lambda
+-When we create lambda function that is attached with name $LATEST, which is latest code .
+-Alias is just like a pointer points to specific version of a code.
+*Lambda Concurrent Executions Limit
+-Default is 1000 concurrent execution per second per  region . If crosses hits 429 HTTP status code.
+-Can increase by requesting to AWS support center. 
+-Reserved concurrency gurantees a set of number of concurrent executions are always available to critical fuction.
+*Lambda and VPC access
+-By default, if lambda wants to communicate with the resources inside private Subnet/VPC its not allowed.
+-VPC configuration needs to be done.
+-details-Specify the VPC,Select the subnet that lambda going to use, choose security group that requires access.
+
+*Step Functions- Provides a visual interface for serverless applications which enables to build and run serverless aps as a series of steps.
+-Consists of State Machine and tasks , State machine is workflow itself and task is each step.
+-Sequential workflows
+-Parallel Workflows
+-Branching workflows
+
+*Comparing Step Function Workflows
+-Standard workflows-
+ -Long running- durable and auditable that may run up for up to a year.full execution history will beavailable upto 90 days after completion.
+ -AT-MOST-ONCE Model-  Tasks are never run more than once until explicitly specify retry action.
+ -Non Idempotent Actions - When Processing payments,Only want to be processed once.(non idempotent-Always causes change in state)
+
+-Express workflows
+ -Short Lived-Upto 5 minutes,great for high vloume, event-processing-type type workloads.
+ -AT-Least-Once - Ideal if there is a possibility that an execution might be run more than once.or require concurrent execution
+ -Idempotent - (If the same action is performend several times there will be no side effects in the state)
+-2 Types of Express workflows
+	-Sync-begins workflow, waits until wf completes,returns the result. Great for operation performed one at a time. Workflow must complete before next step begins.
+	-Async-Begins workflow,confirms wf has started, the results can be found in Cloudwatch logs. Great if operation doesnot depends on completion and result of workflow
+
+
+
+*Understanding Ephemeral & Prsistent data Storage patterns.
+- Lambda is Stateless-Functions are stateless meaning that you can not permanently store any data in the function.(ex. session data, customer data)
+- Lambda is Ephemeral - only run for short period of time, not used for application that run more than 15 min.
+- To presist data the function must interact with data stores like s3,efs,dynamodb
+-Lambda Data storing options-
+ - Native with Lambda- /temp, lambda layers
+	-/temp - Temporary storage , provided in the execution environment of lambda function.By defualt 512 MB , configurable up to 10 gb.
+	       - Like  a chaced file system
+ 	       - Data is not persistant- Available for lifetime of execution env, not a permanent place to store data
+	-lambda Layers - Add libraries and SDK's as a layer that can be refrenaced by multiple funtions. Deployment will be faster as dependeancies are in different layer.50MB zipped -250MB unzipped
+ -External storage - s3, efs etc
+	-S3- Object store only not files.
+	   - Cannot diretly open and write data to objects in S3.If data needs to be changed completely new object should be uploaded.
+	-EFS-shared file system, data is persistant and can dynamically be updated.
+	    - EFS needs to be mounted by funtion when execution env is created.can be shared across invocations
+	    - To use EFS lambda function must be in same VPC as EFS
+
+*Environment Variables.
+-Its a configurable parameter in Lambda, These helps to adjust the behaviour of function without changing the code.Its is basically a key value pair.
+-Locked when the version is published.
+-Other Configurable Parameters in Lambda - VPC, Tags,General Configurations, Triggers, Permissions, function URL, Monitoring and Operations Tools , Concurency, File systems.
+
+*lambda Invocations -
+	-Sync -runs, wait for response and return response
+	-Async- No acknowledgement that function completed.
+-How do we handle error in case of Async Invocation?
+ -Lambda Retries- If funtion returns an error , automatically performs two retries.Lambda waits for one minute before first retry, 2 min before second retry.
+ -Common Errors-Something went wrong in function, function timed out.
+-Dead Letter Queues
+ -Save failed invocations for further processing, asociated with perticular version of function, can be an event source for a function allowing reprocess.
+-Lambda Destinations
+ -Configure one destinantion successful invocation records and other unsucessfull invocation.
+
+*Lambda Deployment Packaging Options
+-When we write a function code in lambda, automatically a .zip file is created in background.This Zip file is deployment package. .zip=application code+dependencies(optional)
+-Also we can create deployment package ourself and upload directly from local up to 50MB.
+-If Deployment package is greater than 50MB, Then need to upload file to s3 in the same region where we create funtion.specify that object when create a function.
+-We can use lambda layers for libraries and other dependecies and SDKs, A layer can be used by many functions.
+
+*Lambda Performance Tuning Best Practises-
+-Increasing memory will increase CPU which reduce the duration.
+-Imporing libraries and SDKs can take time only import what we need 
+
+*Lambda Destinantions and Dead Letter Queues
+
+
+*API Gateway
+-Serverless, cost effective and scalable.
+-Its like a front door to the application.
+
+*X-Ray
+-
+
+
+
+
+
+
+
+
+
 
 
 
