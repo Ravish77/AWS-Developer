@@ -1,5 +1,5 @@
 Explore Data With Google Cloud
-----------------------------------
+========================================
 1.Structured Data- Cloud SQL - MySQL,PLSQL,SQL Server for OLTP in regional scaling Reltaional databases
                    Cloud Spanner - Global scaling for Relational database ,OLTP
                    BigQuery - Data warehouse solutions or OLAP, gives storage and Analytics with serverless. in petabytes
@@ -14,3 +14,10 @@ Explore Data With Google Cloud
 * Looker - A BI tool to create visualization of Data
 * Pub/sub - Messaging service for distributed apps
 * Data flow - gives pipeline for ETL workloads.
+
+GC Solutions for AI and Machine Learning
+------------------------------------------
+*BigQuery ML -
+*Pre Trained API's-
+*Auto ML-
+*Custom Training-
