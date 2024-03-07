@@ -1,0 +1,16 @@
+Explore Data With Google Cloud
+----------------------------------
+1.Structured Data- Cloud SQL - MySQL,PLSQL,SQL Server for OLTP in regional scaling Reltaional databases
+                   Cloud Spanner - Global scaling for Relational database ,OLTP
+                   BigQuery - Data warehouse solutions or OLAP, gives storage and Analytics with serverless. in petabytes
+
+2.Semi Structured data - FireStorage - for Semi structured OLTP, document based DB
+                         BigTable - for OLAP big data DB.
+                
+3.UnStructured date - Cloud Storage for object storage
+
+* DMS- Data Migration service  helps to LIFT and SHIFT approach to move from On prem to Cloud
+* Data Stream - which syncs all data
+* Looker - A BI tool to create visualization of Data
+* Pub/sub - Messaging service for distributed apps
+* Data flow - gives pipeline for ETL workloads.
