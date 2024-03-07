@@ -17,7 +17,21 @@ Explore Data With Google Cloud
 
 GC Solutions for AI and Machine Learning
 ------------------------------------------
-*BigQuery ML -
-*Pre Trained API's-
-*Auto ML-
-*Custom Training-
+*BigQuery ML - Using Data warehouse solution
+*Pre Trained API's- Can use come pre build google API to build ML solutions
+  Vision API - detects texts images sentiments in the data
+  Data Loss Prevension API- Removes sensitive data 
+  Dilogflow- To create chatbot.
+*Auto ML- Vertex AI  lets user to build end to end solution withour writing a single line of code
+  Unless Audio file are formated to Video AutoML never recognize.
+*Custom Training- have to build from end to end.
+*Tensarflow Model in Vertex AI like Auto ML which is used by data scientists team and uses Tensar Processing Unit which speeds up to 15x-50x.
+Vertex AI- unified AI and ML platform.
+Natural Language- Sentiment analysis and Response categorization.
+
+
+
+
+
+Modernizing Infrastructure and Applications with GC
+=======================================================
