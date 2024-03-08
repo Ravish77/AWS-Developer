@@ -73,7 +73,26 @@ Availabilty
 Configuration Mishups-cybersecurity threat occurs when errors arise during the setup of resources, inadvertently exposing sensitive data and systems to unauthorized access      
 
 
+VPN and Interconnect- to connect on prem to cloud
+VPC- Isolated logical section
+CLoud Armor - prevents DDOS Attacks.
+Security Command Center- Help to identify and fix vulnerabilities.
+Cloud Logging - A service to collect and analuze logs
 
+Cost Management Tool - helps to track , analyze and optimize cloud spend.
+GC Pricing Calculator - Estimates the price.
+
+
+Cloud monitoring - provides comprehensive view of cloud infra and apps
+Cloud trace - helps to identify performance issues by collecting latency
+Cloud Logging- collects all logs.
+Cloud profiler - collect CPU usages, memory and give insights how apps are using resources.
+Error reporing - Counta and analyze crashes in real time.
+
+Baisc
+Standard
+enchanced
+Premium
 
   
 
