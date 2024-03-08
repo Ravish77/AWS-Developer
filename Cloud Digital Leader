@@ -32,6 +32,47 @@ Natural Language- Sentiment analysis and Response categorization.
 
 
 
-
 Modernizing Infrastructure and Applications with GC
 =======================================================
+
+Workload
+Retired - Removing a component
+Retained- Intentionally retained
+Rehosted(lift&shift) - Migrate to cloud as is
+Replatform - Migrate with some changes.
+Refactored- Changing architecture or code of the workload.
+Reimagined- Reconsidering complete workload.
+
+Compute -
+*Virtual Machines
+  Compute Engine - IAAS - Can be created using Console or CLI using teraform or Compute Engine API.
+  Spot VMs and Preemptible VMs
+*Containers
+  Virual Machine virtualize and entire machine. whereas Containers virtualize software layers above os level.
+  Kubernates- GKE-Complex environment to run
+  Cloud Run- Serverless when need scale up and down quickly.
+*Serverless
+  Function as a service
+  Cloud Run
+  Cloud Function - same as Lambda
+  App Engine- best for multi version testing.
+
+*Apigee - API Management service .
+*GKE enterprise support both multicloud and hybrid cloud.
+*Bare Metal Soultion - lets organization to run their oracle workloads.
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
