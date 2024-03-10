@@ -59,6 +59,7 @@ DynamoDB
 *DynamoDb Access Control
 -Using IAM we can give specific permissions to dynamodb tables.
 -Using IAM Roles we can give temp access to specific user for a single item in a table.
+-dyanamodb:LeadingKeys allows users to acces only items where partition key value matches user id.
 
 *Indexes
 -DyanamoDb allows to run flexible quering(Quering using non primary attributes) using Local Secondary indexes and Global Secondary Indexes
@@ -74,7 +75,7 @@ DynamoDB
 -Query
  -Can be queried using primary key to get a specific or required items.
  -ProjectionExpression parameter can be used to get only required attributes.
- -Eventually consistent by default can be set to stringly consistent.
+ -Eventually consistent by default can be set to strongly consistent.
  -More efficient then scan
  -Results are sorted using sort key
  -By default ascending order , can set ScanIndexForward to false change the order.
@@ -103,6 +104,9 @@ these commands uses these API calls to process the request also must have valid 
 *DynamoDB On Demand Capacity - It scales up or down instantly based on application and charges do apply best for upredictable worloads, Provisioned capacity is best suited when workload is properly known and charges are in control.
 
 *DynamoDB Streams
+-Time ordered sequence of item level modification.
+-Record these action in a log . stored for 24hrs only and encrypt at rest.
+-Can be used as a event source for lambda function.
 
 
 *DynamoDB TTL
@@ -116,6 +120,11 @@ these commands uses these API calls to process the request also must have valid 
 -Fully managed in memory cache for dynamodb
 -Increases the performace only for the read performance up to 10x
 -Good for ready heavy workloads.
+
+*Provisioned Throughput and Exponential backoff
+-High rate of read and write , and exceeds provisioned capacity
+-If you are using AWS SDK it will retry until successfull else have to configure exponential backoff.
+-Reduce the frequency./use exp back off
 
 
 
@@ -265,12 +274,12 @@ Serverless
 	-Sync -runs, wait for response and return response
 	-Async- No acknowledgement that function completed.
 -How do we handle error in case of Async Invocation?
- -Lambda Retries- If funtion returns an error , automatically performs two retries.Lambda waits for one minute before first retry, 2 min before second retry.
+-Lambda Retries- If funtion returns an error , automatically performs two retries.Lambda waits for one minute before first retry, 2 min before second retry.
  -Common Errors-Something went wrong in function, function timed out.
 -Dead Letter Queues
- -Save failed invocations for further processing, asociated with perticular version of function, can be an event source for a function allowing reprocess.
+ -Save failed invocations for further processing, asociated with perticular version of function, can be an event source for a function allowing reprocess.No invocation records will be sent.
 -Lambda Destinations
- -Configure one destinantion successful invocation records and other unsucessfull invocation.
+ -Configure one destinantion successful invocation records and other unsucessfull invocation.Invocation records will be sent.
 
 *Lambda Deployment Packaging Options
 -When we write a function code in lambda, automatically a .zip file is created in background.This Zip file is deployment package. .zip=application code+dependencies(optional)
@@ -288,9 +297,38 @@ Serverless
 *API Gateway
 -Serverless, cost effective and scalable.
 -Its like a front door to the application.
+- We can import our own API to API gateway using import API feature using definition file.
+-Protocol that supports to import is OpenAPI formerely known as Swagger.
+-We can use OpenAPI definition file to create a new API or updating an existing API.
+-Legacy Protocols-SOAP-returns XML.
+-When using legacy protocol,can configure API Gateway as a SOAP web service passtrough, or you can use API Gateway to convert the XML response to JSON.
+
+*API Gateway Mock endpoints
+-Allows developers to create,test and debug software.
+-Mimics the responses and behaviour of real API.
+-Allows to simulate responses and behaviour which we expect from real API.Also described as mock integration.
+
+*API Gateway Stages
+-referances the lifecycle state of the API.
+-also can use stage variables jus like environment variable to change behaviour of API
+
+-API Gateways can transform request and responses using parameter mapping.
+
+*API Gateway Chaching
+-This reduces number of calls made by aslo improves latency, responses cached for 300 seconds
+-By default API Gateway limits the steady state request rate to 10000 req/sec/region, concurrent 5K/across all api/region, can request in increase.
+
+
 
 *X-Ray
--
+-Helps developers to analyze and debug distributed application.
+-Provides a visualizztion of application components.which is called x-ray service Map.
+-In order x-ray to work with application, Install the X-ray agent, configure using X-ray SDK.
+-X-Ray SDK to X-Ray Daemon to X-Ray in bacthes.
+-So X-Ray SDK and Daemon must be installed in system to send data to x-ray
+-For On premises and EC2 - Install Daemon on server
+-For Elastic Beanstalk- Install X-Ray Daemon on EC2 instances inside elastic Beanstalk.
+--For Docker - Install Daemon on same cluster as app.
 
 
 
@@ -313,8 +351,6 @@ Developer Theory
 *CloudFormation
 *CDK
 *Amplify
-
-
 
 
 
