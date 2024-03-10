@@ -25,7 +25,25 @@ IAM
 
 S3
 =======================
+-Object Based Storage
+-Unlimited storage but one object can be from range 0-5 TB
+-OS and DB can not be stored.
+-Universal namespace. and each bucket name must be globally unique.
+-S3 url - https://BUCKET_NAME.s3.Region.amazonaws.com/KEY_NAME
+-S3 is highly available and durable. 99.95-99.99 availablity and 11 9s durability.
+
+
+
 *S3 Storage Classes
+-Standard - High availablity and Durability and high cost. Data is stored across >=3 AZ, Default class and best for frequent access data.Bigdata workloads websites etc
+-Standard IA- Best for Infrequent Access and designed as Rapid access.Backups diaster recovery etc. Min days is 30days. 
+-One Zone IA - Stored in One zone. 20% less cost then Standard IA. 99.95 availablity.
+-S3 Glacier Flexible access
+-S3 Glacier Instant access
+-S3 Deep Archive
+-Intelligent Tiering
+
+
 *Securing S3 Buckets
 *S3 Encryption
 *CORS
