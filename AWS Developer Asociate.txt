@@ -45,7 +45,15 @@ S3
 
 
 *Securing S3 Buckets
+-All buckets are private and secured by default
+-Bucket policy is a bucket level policy which puts permission on bucket not on individual objects inside it.
+-ACLs is a object level policy which put permissions on each object of an bucket
+-S3 access logs are disabled by default can be enabled, which logs all requests on S3 bucket.
+
 *S3 Encryption
+-S3 encryption at transit - using SSL/TLS
+-S3 encryption at rest - using SSE S3 which uses AES 256, using SSE KMS, using SSE customer provided keys and Client side encryption -encrypting before uploading into bucket.
+
 *CORS
 *Cloudfront
 *Athena
