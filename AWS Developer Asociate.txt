@@ -55,10 +55,24 @@ S3
 -S3 encryption at rest - using SSE S3 which uses AES 256, using SSE KMS, using SSE customer provided keys and Client side encryption -encrypting before uploading into bucket.
 
 *CORS
--Cross Origin resource sharing is not allowed by default.
+-Cross Origin resource sharing is not allowed by default. Can be enable by editing CORS section in bucket .
+-Helps to increase high data transfer speed and low latency.
+-Cloudfront uses Edge locations to cache
+-Objects are cached for a Time which is TTL. Default TTL is 1 day, we can clear but its charged
+-We can also write in cloudfront. S3 transfer acceleration are used by edge locations to reduce upload latency.
 
 
 *Cloudfront
+-AWS Content Delivery Network/CDN
+-Cloudfront uses Edge locations to cache the content .
+-It increases high speed transfers and low latency.
+-Cached contents are stored in Edge location for 1 day by default which is TTL, we can change it which is chargable
+-We can also write to cloudfront which uses S3 transfer accelaration to speed up the upload to origin.
+-Origin can be S3, EC2, ELB, Route 53.
+
+
+
+
 *Athena
 
 
