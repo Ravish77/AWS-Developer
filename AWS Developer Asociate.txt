@@ -18,8 +18,20 @@ IAM
  -Document that defines one or more permissions.
 *Policy Simulator
  -Test the policy.
+
+Advanced IAM
+===================================
 *Web Identity Federation
+-Simplifies Authentication and Authorization for web applications
+-Users can access to AWS resources after successfull authentication with Web identity providers like FB,Amazon, Google.
+-After successfull Authentication user receives codefrom Web IDen provider.
+-Users can use this code to trade temporary access to AWS resources.
+
+
 *Cognito
+-Amazon Cognito provides Web Id federation including Sign-up and in functionality for application ,  and guest users.
+-It acts as a identity broker which manages Authentication b/w app and web id providers.
+
 *Inline Policy vs Managed Policy
 
 
