@@ -57,6 +57,15 @@ Advanced IAM
 	-When we delete the user, group ,role, the policy will also be deleted.
 	-It is always better to use Managed policy unless we are sure that its assigned to only single entity.
 
+*STS AssumeRoleWithWebIdentity
+-Its a API which is given by Security Token Service
+-If we are not using Cognito, Its better to use this for web application.
+-assume-role-with-web-identity also provides temprary credentials after verifying JWT token from Web ID providers.
+
+*Cross Account Access
+-Delegate access to resources in different AWS accounts that we own
+-This process is done by IAM Roles.
+
 
 
 S3
@@ -92,10 +101,7 @@ S3
 
 *CORS
 -Cross Origin resource sharing is not allowed by default. Can be enable by editing CORS section in bucket .
--Helps to increase high data transfer speed and low latency.
--Cloudfront uses Edge locations to cache
--Objects are cached for a Time which is TTL. Default TTL is 1 day, we can clear but its charged
--We can also write in cloudfront. S3 transfer acceleration are used by edge locations to reduce upload latency.
+
 
 
 *Cloudfront
