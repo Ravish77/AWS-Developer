@@ -86,7 +86,11 @@ S3
 
 
 *Athena
-
+-Athena enables to run Standard SQL queries on data stored in S3.
+-Serverless, pay per query.
+-Helpful for query log files and analyze AWS cost reports stored in S3
+-Can be used to genereate business reports.
+-Run queries on click stream data.
 
 
 EC2
