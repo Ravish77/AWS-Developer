@@ -70,7 +70,19 @@ S3
 -We can also write to cloudfront which uses S3 transfer accelaration to speed up the upload to origin.
 -Origin can be S3, EC2, ELB, Route 53.
 
-
+-Origin ACcess Identity is a special cloudfront user that can access the files in our bucket and serve them to user.
+-OAI allows us to restrict access to content directly using S3 and all user should use cloudfront url.
+-Cloudfront Allowed methods 
+	-Head, Get -Read only
+	-Head, Get,Options - Read only
+	-Get,Head,Put,Post,Delete,Patch,Options - Write and Read
+-Get- Read data- Read only
+-Head - Inspect resource headers, similiar to get but does not read response body - Ready only
+-Options - Find out which other HTTp methods supports - Read only.
+-Put- Create or replace the resource. Idempotent.- Write
+-Post- Insert data , create or update, Non-Idempotent. - Write 
+-Patch- partially modify the resource - Wrire
+-Delete- Delete data - Write
 
 
 *Athena
