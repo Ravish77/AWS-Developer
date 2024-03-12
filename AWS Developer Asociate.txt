@@ -19,6 +19,8 @@ IAM
 *Policy Simulator
  -Test the policy.
 
+
+
 Advanced IAM
 ===================================
 *Web Identity Federation
@@ -27,12 +29,34 @@ Advanced IAM
 -After successfull Authentication user receives codefrom Web IDen provider.
 -Users can use this code to trade temporary access to AWS resources.
 
-
 *Cognito
 -Amazon Cognito provides Web Id federation including Sign-up and in functionality for application ,  and guest users.
 -It acts as a identity broker which manages Authentication b/w app and web id providers.
+-Provides Temporary credentials to AWS resources after Authentication from Web Id providers
+-temp credentials maps to a IAM role.
+-User Pools - User directories used to manage sign in-up functionality for mobile and web Application.
+-Identity Pools - enables to provide temporary AWS credentials.
+-An JWT Token is exchanged to provide credentials.
+-Cognito manages Synchronization with all devices. Uses SNS notification to manage Synchro.
 
 *Inline Policy vs Managed Policy
+-Managed Policy 
+	AWS Managed policy
+	-An IAM Policy created and Admined by AWS
+	-They create for common use casses ex-AmazonDynamoDbFullAccess.
+	-helps to provide permissions to users,group,roles without having to write the policy.
+	-Can also be attached to other account
+	-We can not modify the content.
+	Customer Managed Policy
+	-We create the policy
+	-Can be attached to user,roles,goups inside our account.
+	-Can copy from AWS managed policy and can edit it.
+
+-Inline Policy
+	-It is a 1:1 relationship policy Can not attact to multiple groups and roles.
+	-When we delete the user, group ,role, the policy will also be deleted.
+	-It is always better to use Managed policy unless we are sure that its assigned to only single entity.
+
 
 
 S3
