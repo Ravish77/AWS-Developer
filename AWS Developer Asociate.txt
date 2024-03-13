@@ -328,6 +328,16 @@ Key Points - 1. Pull Based 2. 256Kb of any format text data 3.Messages will be p
 -Immutable - Deploys the new version to a fresh group of instances before deleting old instances.
 -Traffic splitting - Allows some traffic to new deployment to test.
 
+*Customize Beanstalk
+Elastic Beanstalk can be customizable in different ways
+-For Linux 1 
+	-Using .eb extension folder. shoudl be lcated in root
+-For Linux 2 
+	-Create a buildfile in root folder
+	-Create a procfile for long running processes
+	-Create platform hooks which customs scripts at various stages
+ 
+
 
 
 Encryption
