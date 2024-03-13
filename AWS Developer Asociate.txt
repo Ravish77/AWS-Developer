@@ -245,7 +245,12 @@ Other Services
 
 -Scenario- Meme Website - User uploads a photo to S3 bucket - triggers lambda function which gets all information and be avaialble in message queue in SQS - EC2 will poll from SQS to add any text/ any other task and store it back to S3.
 
--Visibility timeout- when a message is picked by one ec2 instance from SQS that msg becomes invisible and not available for other instances.That time period is called visibility timeout. This is the time that application server gets to process the message.If the message is not processed in within the time then it will be returned to queue and will be picked by other application server to process.
+-Visibility timeout- when a message is picked by one ec2 instance from SQS that msg becomes invisible and not available for other instances.That time period is called visibility timeout. This is the time that application server gets to process the message.If the message is not processed in within the time then it will be returned to queue and will be picked by other application server to process. By default VT is 30 sec. We can change this time. Maximum up to 12hours.
+
+-Short Polling- Returns a response immideatly even if the message queue is being polled is empty. 
+		This can result in lot of empty responses if Queue is empty
+-Long Polling- Periodically poll the queue, does not return the respone if Queue is empty.
+		Can save money.most preferable.
 
 -SQS will help to decouple the infrastructure, as all messages will not be lost until its get processed and reduce inter dependencies between components of an application
 
@@ -264,23 +269,50 @@ Key Points - 1. Pull Based 2. 256Kb of any format text data 3.Messages will be p
 	-Defualt ,which provides best effort ordering
 	-Unlimited no.of transcations/per second
 	-Gurantees that Msg will be delivered atleast once
+	-Default Queue
 -FIFO Queue
 	-Ordering is strictly prserved
 	-300 Transactions per second
 	-Exactly once processing
 	-No Duplicates are introduced and available until customer processess.
+	-Best for Banking tansactions.
 
-*
+*SQS Delay Queues
+-Postpones delivery of new messages to a queue for a number of seconds.
+-Message sent to delay queue is visible to customer for delay period.
+-Default delay is 0-900 seconds.
+-It does not affect Standard queues but affects FIFO Queus.
+
+*Managing Large Messages in SQS
+-for messages from 256kb to 2GB in size
+-Use s3 to store messages.
+-Use Amazon SQS client library and AWS SDK for Java to manage them.
 
 
 *SNS-Simple Notification service
+-Push based
+-Customer must subscribe to a topic to get message.
+-Uses pub-sub model.
+-SMS,Email,HTTP endpoint, SQS etc
+
 *SES- Simple Email Service
+-Can be used to send and receive mails via S3.
+-Can be used to trigger Lambda or SNS
+-only need email address.
+
+
 *Kinesis
--
--
--
--
--
+-It is a family of services that enables to collect,process and analyze real time data.
+-Kinesis Data Stream
+ Producers send data to Data stream. data stream reatins data for 24hrs by default and 365 maximum
+ Data stored in shards which is sequence of data records.
+ Shards are only part of Streams. it provides fixed unit of capacity.
+ Data capacity is determined by shards.
+-Kinesis Video Stream
+ -Allows to securely stream video from connected devices from AWS.
+ -Videos can be used for Analytics and Machine learning.
+-Kinesis Data Firehouse - Capture,transform and Load data streams into AWS stores to enable near real time analytics with BI tools. No retention.
+-Kinesis Data Analytics- Analyze, Query and transform streamed data in real time using Standard SQL. Can store results in AWS store. Can run SQL on data from Data stream and Data firehouse.
 
 *Elastic Beanstalk
 
@@ -466,7 +498,3 @@ Developer Theory
 *CloudFormation
 *CDK
 *Amplify
-
-
-
-
