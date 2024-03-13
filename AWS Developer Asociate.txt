@@ -297,6 +297,20 @@ Encryption
 -Encrypt /decrypt data upto 4kb
 -Generate/encypt/decrypt data key
 -data key encrypts the data and CMK encrypts the data key.This is called envolupe Encryption.
+-Can not be exported outside KMS.
+-An friendly Alias we can provide and creation date will be recorded when we create CMK.
+
+*KMS API Calls
+-aws kms encrypt - to encrypt the file  using CMK
+-aws kms decrypt - to decrypt the file using CMK 
+-aws kms re-encrypt - Decrypts the ciphertext and then re encrypt entirely within KMS.(When u change MCK or rotate it)
+-aws kms enable-key-rotation -Enables automatic key rotation every 365 days.
+-aws kms get-key-rotation-status
+-aws kms generate-data-key -Uses CMK to generate data key.which encrypts data above 4kb
+
+*Envelope Encryption
+-Data key is sometime refers to Envelope key.
+-using Envelope encryption its only data key is send through network not data.
 
 
 *Cerificate Management in AWS
