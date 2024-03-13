@@ -314,7 +314,19 @@ Key Points - 1. Pull Based 2. 256Kb of any format text data 3.Messages will be p
 -Kinesis Data Firehouse - Capture,transform and Load data streams into AWS stores to enable near real time analytics with BI tools. No retention.
 -Kinesis Data Analytics- Analyze, Query and transform streamed data in real time using Standard SQL. Can store results in AWS store. Can run SQL on data from Data stream and Data firehouse.
 
+-Kinesis Client Library KCls are installed in consumers which will help to track shards and load balance across consumers.
+
 *Elastic Beanstalk
+-Allows to deploy and scales web applications.
+-No need to worry about Ec2 instances.
+-Eventhough we have control over all resources.
+
+*Updating Beanstalk
+-All at once Deployment- Deploys on all host concurrently.
+-Rolling Update - Deploys the new version in batches.
+-Rolling with Additional batch - Laucnhes and additional batch of instances, then deploy the new version in batches.
+-Immutable - Deploys the new version to a fresh group of instances before deleting old instances.
+-Traffic splitting - Allows some traffic to new deployment to test.
 
 
 
