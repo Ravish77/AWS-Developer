@@ -137,7 +137,17 @@ S3
 
 EC2
 =======================
+*Pricing Oprions
+-On Demand - Pay by the hour or second depending on the type of instnace you run.
+-Reserved Capacity - for 1 o 3 years which reduces cost by 72% - Its a regional level.
+	Standard RI-Up to 72 % discount
+	Convertible RI - 54% discount.Has the option to change the instance type.
+	Scheduled RI - Launch within the time window you define.
+-Spot Instances - Purchase a unused capacity at a discount of upto 90%.Prices fluctuate with supply and demand.
+-Dedicated Hosts - A EC2 physical server dedicated for your use.Most expensive option. Useful in compliance strict.
 
+*Instance Types
+-
 
 
 
