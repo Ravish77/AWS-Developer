@@ -169,6 +169,27 @@ OLAP- Data Analyzing - Redshift
 -detects the failover and routes to stand by very quickely
 -And preserves application connection during failover
 
+*Elasticache
+-Its a in memory chache, key value data store. Helps to store session data
+-Improves Database performance 
+-Great for Read heavy DB workloads.
+-2 types of Elasticache
+	-Memcached - Great for basic object chaching, single AZ
+	-Redis - More sophesticated solution with enterprise features. Multiple AZ
+
+-Memory DB for Redis - Its a massively scalable in memory db, It can also be used as primary DB, we get ultra fast performance 160million requests per second , micro second read and single digit miliseond write latency.
+-Scalable upto 100TB
+
+Systems Manager Parameter STore
+-Used to store liscence keys, configuration variables., username or passwords etc.
+-Avoid hardcoding parameters in your code.
+
+Secrets Manager
+-Allows to protect and store secrets. Best for Database, Redshift cluster and API keys
+-Automate the rotation to custom no.of Days. with 365 day is max.
+-Used to store Database secrets. DB username and passwords server address, DB name and port
+-Secrets are encrypted with KMS.
+
 DynamoDB
 =======================
 -Made up of tables contains items and attributes
