@@ -513,10 +513,48 @@ Serverless
 Developer Theory
 ========================
 *CodeCommit
+-distributed central Version/source control Private git repositories
 *CodeBuild
+-Automate the build
 *CodeDeploy
+-Automate the deplyment process on EC2,lambda or onpremis is well
+- In- place deployment  -Rolling Updates.- Capacity will be reduced during deployment. Rolling back is time consuming. Lambda is not supported.
+- Blue/Green Deployment- No capacity reduce, deployed on new instance and register with load balance , easy to rollback
+-Appspec file - Its a configuration file which defines the parameters to be used during deployment.
+	-For lamnda- YAML or JSAON For EC2/On prem - Its YAML always.
+	-Version , OS , files, hooks
+	-Always appspec file in root of the folder.
+-Lifecycle event hooks for In Place deployment has specific run order.
+	-Phase 1 - De Register the Load balancer
+		-BeforeBlockTraffic
+		-BlockTraffic
+		-AfterBlockTraffic
+	-Phase 2 - Real nut and bolt of deployment
+		-ApplicationStop
+		-DownloadBundle
+		-BeforeInstall
+		-Install
+		-AfterInstall
+		-ApplicationStart
+		-ValidateService
+	-Phase 3 - Re Register with the load balancer.
+		-BeforeAllowTraffic
+		-AllowTraffic
+		-AfterALlowTraffic
+
 *CodePipeline
+-Fully managed CICD service. Which will automate the complete CICD workflow. Integrates with Codecommit,CodeBuild,Codedeploy as well as othet services like Github,s3,Jenkins etc
+
 *CodeArtifact
+-Integrates with 3rd  party public repositories like npm repo, maven central to provide sofatware packages that can be used to build software.
+
+-Elastic Container Serive
+-Its a virtual operating Environment with everything the software needs to run.
+-Allows apps to built using independent stateless components or microservices running in multiple containers.
+-ECS allows to run containers on cluster of EC2 inctances and FARGATE  you dont need to worry aboy underlying infra as it is serverless.
+-ECR is the place to store container images.
+
 *CloudFormation
+-Allows to manage, configure, provision your infratsructue as code.
 *CDK
 *Amplify
