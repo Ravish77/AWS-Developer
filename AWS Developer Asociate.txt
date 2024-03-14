@@ -143,7 +143,31 @@ EC2
 
 RDS
 =======================
+-Can be deployed in Multiple AZ with failover , automated backups .
+-Multi AZ- its an exact copy of production db, When we write on production db it will automatically synchronize with stand by. It is not for increasing performance its for disaster recovery.
+-Read Replicas - It is a read only copy of primary db. It can be in same AZ or cross AZ or cross Region is well.
+Automatic backups must be enabled in order to deploy read replica. 5 rr can be added for each instances.
 
+OLTP-Data Processing -RDS
+OLAP- Data Analyzing - Redshift
+
+*RDS BAckups and Snapshots
+-DB Snapshots
+ Manual, Ad-hoc, No retention , its not get deleted.
+-Automated Backups 
+ Enabled by default. Creates daily backup.Recover Db within a retention period 1-35 days.
+ snapshots+transaction logs. snapsshots are stored in s3.
+
+*Enryption of RDS
+-Uses KMS AES 256 Encrption.
+-We can enable encryption only while creating RDS
+- We can not encrypt the unencrypted DB directly.
+-To encrypt it , Unencrypted DB - Take Snapshot that is also unencrypted - Create encryption to snapshot - Restore the Snapshot to get Encrypted DB
+
+*Increasing Scalability with RDS Proxy
+-RDS proxy is serverless and scales automatically to give connection pooling.
+-detects the failover and routes to stand by very quickely
+-And preserves application connection during failover
 
 DynamoDB
 =======================
@@ -556,5 +580,13 @@ Developer Theory
 
 *CloudFormation
 -Allows to manage, configure, provision your infratsructue as code.
+-Resources is the only mandatory section in the stack
+-Transform section allows to reference the other code in s3.
+-Conditions section provision resources based on environments.
+-Mappings section allows to create custom mappings.
+
+*Exporting and Importing Cloudformation Stack Values
+
+
 *CDK
 *Amplify
