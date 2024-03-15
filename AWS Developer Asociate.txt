@@ -289,7 +289,53 @@ these commands uses these API calls to process the request also must have valid 
 
 Monitoring
 =======================
+*CloudWatch
+-Its all about monitoring performance and health of your system.
+-By default we get host level metrices- CPU,network,disk and status check
+-By default EC2 doesnot send OS level metrices to Cloudwatch - Memory usage, CPU idle time,processes etc.
+-By installing Cloud watch Agent on EC2, we can get OS level Metrices in CW
+-By Default Ec2 sends metrics to CW in 5minute interval, Can increase granularity by changing  to 1 minute.
+-For Custom metrics 1 min is defualt, we can set to 1 sec also.
+-CW can also used to Monitor System and Application log files.
 
+*CLoudWatch Alaram 
+-Can create alarm to monitor any metric  in your account.
+-Like CPU utilization, ELB latency, charges of bill.
+-Create a threshold and action if ALARM state is reached.
+
+-CW Metrices - A metric is a variable to monitor
+-CW Namespaces- Its a container for CW metrices
+-CW dashboard-Its a custom view where we can monitor all resources in one place.
+-CW dimensions- Its jus like a filter
+
+*CloudWatch vs CloudTrail
+-CloudTrail records all uer activity in AWS account, Records All API calls.Delivers log files containing API calls to an S3 bucket. Can be integrated with CW logs.
+-CW is all about performance and metrics, CW logs CW alarams
+
+*Cloudwatch Actions
+-PutMetricData- Publishes metric data points to CloudWatch
+-PutMetricAlarm- Creates alarm associated with metric alert
+
+*CloudWatch Logs Insights 
+-Allows to run interactive query and analysis.
+
+*Eventbridge 
+-Eventbridge is an event driven architecture. An event is a change in state.
+
+*Common HTTP Error Codes
+-Client Side Error 4XX - 400 Access denied Exception
+			403 Missing Authentication Token.
+			404 - Malformed Query String
+-Server Side error 5XX - 500 Internal failure
+			503- Service unavaialble.
+*Common SDK Exceptions
+-BatchGetItem-Can request upto 100 item or 16mb
+	ValidationException - Too many items requested
+	UnprocessedKeys - Decrese request size
+	ProvisionedThroughputException - Add DAX
+-BatchWriteItem - Can write 25 item/16 Mb
+	UnProcessedItems
+	ProvisionedThroughputException
 
 Other Services
 =======================
