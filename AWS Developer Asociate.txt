@@ -620,4 +620,19 @@ Developer Theory
 
 
 *CDK
+-Allows to write code in your preffered language and the converts to cloudformation template to provision .
+-App-Container for one or more stack
+-Stack - Unit of deployment
+-Construct - Defines AWS resources
+cdk init - npm run build - cdk synth - cdk deploy
+
 *Amplify
+-Set of tools and services designed to make it easy to develop web and mobile apps
+-Helps to create full stack apps.
+-Amplify Studio- Simple visual tool, Create your frontend UI, seperate from AWS console.
+-Amplify Hosting - Fully managed web hosting, both for dynamic web app and static web hosting.,CICD functionality. Integrates with Code repos.
+	
+
+
+
+
