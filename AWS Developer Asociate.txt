@@ -602,15 +602,6 @@ Serverless
 
 
 
-
-
-
-
-
-
-
-
-
 Developer Theory
 ========================
 *CodeCommit
@@ -678,7 +669,4 @@ cdk init - npm run build - cdk synth - cdk deploy
 -Amplify Studio- Simple visual tool, Create your frontend UI, seperate from AWS console.
 -Amplify Hosting - Fully managed web hosting, both for dynamic web app and static web hosting.,CICD functionality. Integrates with Code repos.
 	
-
-
-
 
