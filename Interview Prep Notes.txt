@@ -1,6 +1,6 @@
 	Core Java
 ---------------
-*java is platform independent . Because Java compiler converts High Level Language to Byte code this byte code is independent of any platform. If JVM is present we can run Java code in any platform , this feature is also called as WORA.
+*java is platform independent . Because Java compiler converts High Level Language to Byte code this byte code is independent of any platform. If JVM is present we can run this Bytecode code in any platform , this feature is also called as WORA.
 
 String
 ===========
