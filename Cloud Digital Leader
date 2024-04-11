@@ -1,6 +1,6 @@
 Explore Data With Google Cloud
 ========================================
-1.Structured Data- Cloud SQL - MySQL,PLSQL,SQL Server for OLTP in regional scaling Reltaional databases
+1.Structured Data- Cloud SQL - MySQL,PLSQL,SQL Server for OLTP in regional scaling Reltaional databases.Cloud SQL is a transactional relational database optimized for both reads and writes used in an operational context, but not for analyzing historical data.
                    Cloud Spanner - Global scaling for Relational database ,OLTP
                    BigQuery - Data warehouse solutions or OLAP, gives storage and Analytics with serverless. in petabytes
 
