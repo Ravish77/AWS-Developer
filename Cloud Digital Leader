@@ -1,11 +1,15 @@
 Explore Data With Google Cloud
 ========================================
-1.Structured Data- Cloud SQL - MySQL,PLSQL,SQL Server for OLTP in regional scaling Reltaional databases.Cloud SQL is a transactional relational database optimized for both reads and writes used in an operational context, but not for analyzing historical data.
+1.Structured Data- Cloud SQL - MySQL,PLSQL,SQL Server for OLTP in regional scaling Reltaional databases.
+Cloud SQL is a transactional relational database optimized for both reads and writes used in an operational context,
+but not for analyzing historical data.
                    Cloud Spanner - Global scaling for Relational database ,OLTP
                    BigQuery - Data warehouse solutions or OLAP, gives storage and Analytics with serverless. in petabytes
 
 2.Semi Structured data - FireStorage - for Semi structured OLTP, document based DB
-                         BigTable - for OLAP big data DB.
+                         BigTable - for OLAP big data DB.Cloud Bigtable is a petabyte scale, NoSQL, 
+column family database with row keys optimized for specific queries. It is used to store historic, 
+time-based data and answers the need for this requirement.
                 
 3.UnStructured date - Cloud Storage for object storage
 
@@ -53,8 +57,8 @@ Compute -
   Cloud Run- Serverless when need scale up and down quickly.
 *Serverless
   Function as a service
-  Cloud Run
-  Cloud Function - same as Lambda
+  Cloud Run-Cloud Run allows you to run and execute containerized code in a highly concurrent environment.
+  Cloud Function - same as Lambda-Cloud Functions allows you to submit and execute small snippets of code that fire based on system events.
   App Engine- best for multi version testing.
 
 *Apigee - API Management service .
