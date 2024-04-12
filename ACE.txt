@@ -39,6 +39,15 @@ Custom Role, - Even more specific.We have to manage.Can be applied only at Proje
 *Cloud Identity
 -Using Cloud identity, organizations can define and manage their users and groups using Console.
 
+*VPC-Virtual Private cloud
+-A secure,individual,private cloud computing model hosted within public cloud.
+-VPC has routing table.
 
+*Compute Engine - 
+-Can create and run Virtual machines on GCP.
+-Sustained Use discounts - when instnce is is used more then 25% in a month 
+-Comitted use discounts-57% discount when workload is comitted for 1 or 3 years.
+-preempyible or spot VM
+-Autoscling can be used to horizontally scale the compute engine.
 
 
