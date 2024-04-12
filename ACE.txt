@@ -1,1 +1,44 @@
 *Cloud Engineer deploys and secure appli,cations and infrastructure, Monitor operations of mutiple projects and maintains enterprise solutions that meets specific metrices.
+
+GC Infra can be broadly divided into:
+Compute 
+Storage
+Bigdata
+ML
+Application Services
+
+IaaS-Compute Engine
+PaaS- App Engine
+Serverless - Cloud functions- event driven, Cloud run - Depoly containerized microservice application 
+*GCP introduced per second billing-Google cloud pricin calculator to estimate.-Budgets,Alerts,Reports and Quotas to spefiy the limts or control the bills.
+
+*GC Resource Hirarchy-
+-Resources-Project-Folder-Organization Node
+-Policy applied at higher level will be inherited to lower level
+-Project contains - 
+Project name-Mutable, not unique, we choose
+Project Id - Globally unique, immutable,Googlr choose
+number-Globally unique and immutable.
+-GC Resource manager tool designed to manager projects programatically.
+-Folders can contain projects or folders
+
+*IAM
+-Defines WHO can do WHAT on WHICH resources.
+-Policy always checks Deny rule over allow rule.
+-3 types of roles - 
+Basic Role, -Editor , Viewver, Owner, Billing Admin
+Predefined role-When we cant to use specific premissions.
+Custom Role, - Even more specific.We have to manage.Can be applied only at Project or Organizational Level.
+
+*Service Accounts
+-Whenever Compute engine wants to access rather then human we create Service accounts.
+-Service accounts use mail id and cryphtograpic keys not passwords.
+-Service accounts must be managed.
+-IAM policies can be attached to service accounts jus like other resources.
+
+*Cloud Identity
+-Using Cloud identity, organizations can define and manage their users and groups using Console.
+
+
+
+
