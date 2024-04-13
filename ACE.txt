@@ -50,4 +50,58 @@ Custom Role, - Even more specific.We have to manage.Can be applied only at Proje
 -preempyible or spot VM
 -Autoscling can be used to horizontally scale the compute engine.
 
+*Cloud Load Balancing- Balance the load across the VMs, provides multi region load balancing also.
+
+
+*Connecting networks to Google VPC
+-Cloud VPN -Uses Cloud Router to make connection dynamic.
+-Direct Peering - Puts a router in the same public datacenter  as a Google point of presence.
+-Carrier Peering - Gives direct access from on prem though service provider network.
+-Dedicated Inerconnect - Allows one or more direct, private connections to google
+-Partner Interconnect - useful if DC is in a physical location that cant be reached via Dedicated interconnect.
+-Cross Cloud interconnect - Connectivity with other service provider.
+
+
+
+*Google Cloud Storage Options 
+-Structured
+-Unstructured
+-Transactional
+-Relational
+
+*Cloud Storage -(more or less similiar to s3)
+-Object storage
+-Storage classes
+  -Standard Storage-Frequently accessed
+  -Nearline Storage - Infrequently accessed like once in a month.
+  -Coldline Storage - Once per 90 days.
+  -Archival Storage - Once a year.
+  -Auto class - Automatically detects the data access patern and categorize.
+
+*Cloud SQL 
+-MySQL,Postrges, SQL Server
+-Can scale up to 864GB of RAM , 64TB of Storage 
+
+*Cloud Spanner 
+-Strongly Consistent  and scales horizontally
+-Specially for joins and secondary indexes, High no og reads/ writes, Built in high availablity, Strong global consistency.
+
+*Fire store 
+-No SQL DB for mobile ,web.
+-Data stored in documents.
+
+*BigTable
+-NoSQL Bigdata database service.
+-Low latency, high throughput, and handle massive work loads
+-great for both operational and analytical applications.
+
+
+
+
+
+
+
+
+
+
 
