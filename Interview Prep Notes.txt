@@ -282,7 +282,16 @@ Access Modifiers
 
 
 Wrapper Classes
+
+
 Collections
+=================
+*Disadvantages of Array - Continueos memory allocation, fixed size, it can hold only homogenous type of data.
+*Advantages of Arrays over ArrayList - Faster and efficient , when the size is known use array, homogenous.
+
+
+
+
 Enum
 =============
 
