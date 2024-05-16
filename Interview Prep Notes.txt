@@ -359,3 +359,25 @@ Linear
 Non-Linear
 	-Tree
 	-Graph
+
+
+Spring And Spring Boot
+================================
+Spring - Spring Core, Spring Test, Cross Cutting Concerns, MVC, Database - There are lot of modules for each category.
+*Spring will manage objects instead of us and give the objects whenever we need, this is done using container which is called IoC Inversion of Control.
+*BeanFactory and ApplicationContext are 2 containers. ApplicationContext is the latest one.
+*We can configure our container in 4 ways
+	-Using XML approach
+	-Using Annotations approach
+	-Using pure java approach
+	-Using Spring Boot autodriven approach
+
+*Dependency Injection- We can achieve dependency injection using 3 method
+	-Setter Innjection
+	-Constructor Injection
+	-Field Injection-not recomended
+
+*Container Configuration Using XML approach
+-setter injection
+-Constructor Injection
+	
