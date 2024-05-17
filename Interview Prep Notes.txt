@@ -380,4 +380,20 @@ Spring - Spring Core, Spring Test, Cross Cutting Concerns, MVC, Database - There
 *Container Configuration Using XML approach
 -setter injection
 -Constructor Injection
-	
+
+*Container Configuration using Annotations
+-@Component - Its a class level annotations which makes the class as the bean @Component("emp")
+-@Autowired- It is used to inject the bean automatically. Can be used with Field,setter,constuructor injection.
+-@Qualifier- This annotation is used in conjunction with Autowired to remove confusion between 2 beans of same type.
+-@Primary- This is annotation makes a bean with higher prferenace when there are 2 beans of same types. Its similiar to Qualifier. but We use Primary is the bean class , whereas we use Quaifier with Autowired in the Target class.
+-@Controller-It will make the class as Component and can be used for controller classes.
+-@Service-It will make the class as Component and can be used for Service layer classes.
+-@Repository-It will make the class as Component and can be used for DAO Layer classes.
+-@RestController
+
+
+
+
+
+
+
