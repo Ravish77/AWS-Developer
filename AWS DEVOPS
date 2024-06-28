@@ -1,4 +1,37 @@
 1.SDLC Automation
+-CICD Concepts - 
+* Problem - Waterfall types of projects are slow , not iterative, and have long release cycles.
+*to solve this Continuous Integration(Code,Test,Build,QA,Release)  and Contineous Deployment(to prod). Contineous Delivery is not deployed to Prod.
+-CodeCommit- It is a managed service that hosts private git repositories
+
+
+-CodeBuild
+-CodeDeploy
+-CodePipeline
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 2.Configuration Management and Infrastructure as Code
 3.Monitoring and Logging
 4.Incident and Event Response
