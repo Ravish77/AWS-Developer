@@ -1,1 +1,7 @@
-
+Machine learning cycle
+-----------------------------------------
+FETCH DATA -> CLEAN -> PREPARE -> Traing Model -> Evaluate Model -> Deploy Production -> Monitor & Evaluate -> FETCH DATA
+GENEREATE EXAMPLE DATA -> Deploy The Model
+  
+1.Data Collection
+==========================================
