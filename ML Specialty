@@ -1,7 +1,32 @@
+
+1.Data Collection
+==========================================
+
 Machine learning cycle
 -----------------------------------------
 FETCH DATA -> CLEAN -> PREPARE -> Traing Model -> Evaluate Model -> Deploy Production -> Monitor & Evaluate -> FETCH DATA
 GENEREATE EXAMPLE DATA -> Deploy The Model
   
-1.Data Collection
-==========================================
+*No matter how we get the data , we are building a repository. We must find a way  to congregate the data into 
+single data repository.
+
+General Data Terminology
+-----------------------------------------
+*Datasets - The data we use in machine learning is usually defined as dataset. dataset is collection of data.
+*Structured data - which has a deined schema- includes attribute names and thier datatypes.Relational tables 
+*Unstructured data - No defined scheme. Images, video audio etc
+*Semi structured- To unstructured for relationsal data - CSV, JSON, XML.
+
+Databases -  Databases are repositories for Traditional Relational DBs
+Data Warehouse - some processes will takes place before storing 
+Data Lake - Stores massive amount of unstructured data.No process before storing.
+
+Machine Learning Terminologies
+------------------------------------------
+*Labeled Data - Data where we already know where the target data is. Supervised learning
+*Unlabeled Data - Data that has been collected with no target attribute. Unsupervised learning
+
+
+
+AWS Data Stores 
+----------------------------------------
