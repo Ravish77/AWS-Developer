@@ -76,9 +76,16 @@ Kinesis data Streams
   -data blob - passangers
 -Retention period  for data records are 24 hours after creation can be changed to 365 days.
 
-
+*KPL- Kinesis Producer Library - easy to use library that allows you to write to a Kinesis Data Stream.
+*KCL-K Client Library  - Integrate directly with KPL for consumer applications to consume and process data from Kinesis data stream.
+*AWS SDK - Low level api similiar to KPL and KCl.
 
 Kinesis data firehouse
+---------------------------------------
+-No need to worrky about shards and final goal is to store data in some data stores
+-No retention period is available.
+
+
 Kinesis Video Streams
 Kinesis Data Analytics
 
