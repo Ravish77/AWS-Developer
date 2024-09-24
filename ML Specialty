@@ -30,3 +30,20 @@ Machine Learning Terminologies
 
 AWS Data Stores 
 ----------------------------------------
+
+
+
+
+AWS Helper Tools
+----------------------------------------
+*EMR- Elastic Map Reduce - Its Fully managed hadoop based cluster
+*Athena - Serverless paltform that allows to sql queries on s3 data.
+
+Redshift Spectrurm vs Athena 
+-----------------------
+*Both query on s3
+*RS needs Redshift cluster , Athena does not need
+*RS is made for existing redshift customers and Athena is for new customers quickly want to query s3 data.
+
+
+
