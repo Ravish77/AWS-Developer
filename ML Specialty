@@ -26,11 +26,22 @@ Machine Learning Terminologies
 *Labeled Data - Data where we already know where the target data is. Supervised learning
 *Unlabeled Data - Data that has been collected with no target attribute. Unsupervised learning
 
+*Categorical features - That are associated with a group. Qualitative, Discrete
+*Continuos feature - values that are expressed as measurable number. Quantitative, Infinite
 
+*Text data - 
+*Ground truth data - data that has succefully labbeled and can be trusted as truth data.
+*Image data - 
+*Time series data - data that changes with time.
 
 AWS Data Stores 
 ----------------------------------------
-
+*S3 -object based storage,  0-5TB single object size , unlimited storage, Go to place for ML data
+*RDS - Traditional relational DBs
+*DynamoDb- No relational db, key value pair. 
+*Redshift- Data warehousing solution. Any kind of data. BI tools can used on warehouse.Redshift spectrume allows to query s3 data.
+*Document DB- Mongodb compitible AWS db.
+*TimeStream- Time series data - stock market data.
 
 
 
@@ -39,11 +50,19 @@ AWS Helper Tools
 *EMR- Elastic Map Reduce - Its Fully managed hadoop based cluster
 *Athena - Serverless paltform that allows to sql queries on s3 data.
 
+
 Redshift Spectrurm vs Athena 
 -----------------------
 *Both query on s3
 *RS needs Redshift cluster , Athena does not need
 *RS is made for existing redshift customers and Athena is for new customers quickly want to query s3 data.
+
+
+2. Streaming Data Collection 
+=======================================
+
+Concepts
+--------------------------------
 
 
 
