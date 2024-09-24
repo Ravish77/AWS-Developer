@@ -61,8 +61,27 @@ Redshift Spectrurm vs Athena
 2. Streaming Data Collection 
 =======================================
 
-Concepts
+Kinesis
+------------------
+Kinesis data Streams
 --------------------------------
+*Gets data from producers, different devices and applications(social medias, video games, logs)
+*Stream data stored in shards 
+*Data consumers will process or analyze data(EC2, Lambda, Kinesis data analytics)
+*Can be then stored in S3 or dynamodb etc
+*Shards-Each shard consists of a sequence of data records. These can be ingested 1000 records per second. Defualt limit is 500 can be changed to 500.
+  A data record is the unit of data captured.
+  -Sequence number-Traincar
+  -Partition key - train id
+  -data blob - passangers
+-Retention period  for data records are 24 hours after creation can be changed to 365 days.
+
+
+
+Kinesis data firehouse
+Kinesis Video Streams
+Kinesis Data Analytics
+
 
 
 
