@@ -91,4 +91,44 @@ Kinesis Data Analytics
 
 
 
+3. Data Preparation
+================================================
+Categorical Encoding- Turning text into numbers
+-------------------------
+*Changing category values in our dataset to numbers
+*We have some alogrith to transform the data
+*categorical value = categorical feature = discreate feature
+*Nominal - order does not matter (ex- color, true/false), ordinal- order matters (ex-size)
+*Encoding Ordinal attribute to numbers are easy
+*Encoding Nominal attribute to numbers are not  a good idea. So One-hot encoding comes into picture.
+*One hot encoding is not good when there are huge number of categories.
+
+
+
+Feature Engineering
+---------------------------------
+*Text Feature Engineering
+-Tranforming the text within our dataset
+-Bag of words - converting it into statistical data
+-N-Gram 
+-Orthogonal Sparse Biagram(OSB)- 
+
+
+*Numeric Feature Engineering
+*Other Feature Engineering
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Handling Missing Values
 
