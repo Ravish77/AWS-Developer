@@ -96,7 +96,7 @@ Kinesis Data Analytics
 Categorical Encoding- Turning text into numbers
 -------------------------
 *Changing category values in our dataset to numbers
-*We have some alogrith to transform the data
+*We have some alogrithms to transform the data
 *categorical value = categorical feature = discreate feature
 *Nominal - order does not matter (ex- color, true/false), ordinal- order matters (ex-size)
 *Encoding Ordinal attribute to numbers are easy
