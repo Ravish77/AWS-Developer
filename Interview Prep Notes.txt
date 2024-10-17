@@ -1,11 +1,11 @@
-	Core Java
----------------
-*java is platform independent . Because Java compiler converts High Level Language to Byte code this byte code is independent of any platform. If JVM is present we can run this Bytecode code in any platform , this feature is also called as WORA.
+	CORE JAVA
+------------------------------
+*java is platform independent . Because Java compiler converts High Level Language to Byte code this byte code is independent of any platform. If JVM is present we can run Java code in any platform , this feature is also called as WORA.
 
 String
-===========
+==============================
 *Strings in Java are treated as Object and memory will be allocated in Heap Area.
-*String is a set of characters which is eclosed with double quotes ""
+*String is a set of characters which is enclosed with double quotes ""
 *In Heap Area there is a special region called "String Constant Pool" where duplicates are not allowed whereas in Heap area ,duplicates are allowed. 
 
 
@@ -17,7 +17,7 @@ Immutable String-
  2.String s = new String("Ravish");
 	**Memory will be allocated in Heap area when created with new keyword also one copy will be created in SCP
 -When we use String referances to call the methods of String class, new String will be created and that too in heap area. the base string will be not be modified as it is a Immutable string
--If we use "+" without any referances to concatinate 2 strings then memory will be allocated in SCP , If we use + sign to concatinate using references then meory will be allocated in Heap area.
+-If we use "+" without any referances to concatinate 2 strings then memory will be allocated in SCP , If we use + sign to concatinate using references then memory will be allocated in Heap area.
 *Different ways to compare Strings
  -== - referance variables will be compared
  -equals - actual string values will be compared
@@ -41,23 +41,24 @@ Mutable String
 
 
 Array
-============
+=============================
 -Collection of homogeneous elements in contigueos memory.
 -Jagged array is a multidimensional array where member arrays are different in length.
 
 
 
+
 Encapsulation
-==============
+=============================
 *Enacpsulation is a method of hiding the sensitive data from user by making fields as private.
 *We create getters and setters which are public methods the access the fields which helps to get the value and set the value respectively.
 *getters are read only methods and setters are write only methods.
 
 Inheritance
-==============
+=============================
 *process of class deriving from another class using extends keyword called Inheritance.
 *All the fields and behaviours from the Super class get inherited to sub class.
-*After Creating a object from Parent referance with Child constructor, we can only access inherited/overridden method and can not access speciliazed methods which are only in child class. But specialized methods can be accessed by changing the parent class Cast to downcasting.
+*After Creating an object from Parent referance with Child constructor, we can only access inherited/overridden method and can not access speciliazed methods which are only in child class. But specialized methods can be accessed by changing the parent class Cast to downcasting.
 
 
 Method Overriding and Method Overloading
@@ -72,7 +73,7 @@ Method Overriding and Method Overloading
 	*parameter list also must be same
 
 Polymorphism
-==============
+=========================================
 *It is a feature of where one thing behave as many forms.
 *static method particpate in Inheritence but can not be overridden. This is called method hiding.
 *Method Overriding is a Runtime polymorphism and method overloading is a compile time polymorphism.
@@ -85,17 +86,17 @@ Polymorphism
 	2.Improve communication between 2 entities.
 
 * Associations in java- 1. 1 to 1 2.1 to many 3. many to 1 4. many to many.
-- Student has a Address (Student is a Traget class and Address is a Dependant object- 1:1)
--Student has a Addresses(1:M)
+- Student has a Address (Student is a Target class and Address is a Dependant object- 1:1)
+-Student has  Addresses(1:M)
 -Branch has Employees(M:1)
 -Students has Courses(M:M)
 
-*Composition and Aggregation
--Aggregation - In case of agg, if the contained object would be existed even without container object. Ex. Relationship b/w Library and Student.
--Composition - In case of composition, if the contained object does not existed then container object also wont exist. Ex Relationship b/w Library and Books
+*Composition and Aggregation - Association between 2 entities can be of these 2 types.
+-Aggregation - In case of agg, if the container object would be existed even without contained object. Ex. Relationship b/w Library and Student. Student and Mobile
+-Composition - In case of composition, if the contained object does not existed then container object also wont exist. Ex Relationship b/w Library and Books, Student and Heart
 
 Abstraction
-============
+==========================
 *abstract keyword can be used with classes and methods
 *If a class is made abstarct the object of that class can not be created(but referance can be created) , One must inherit the class to access it.
 *If a method is made abstract, then the method does not have any body.  also abstract methods can only be specified in abstract classes.
@@ -104,26 +105,47 @@ Abstraction
 
 
 Interface
-===========
+=========================
 *100 % of abstraction can be achieved.- contains only pure abstract methods
-*Interface contains only method signature not implementations. Tha class which inherits the interface must give the implementation or should declare itself as abstract class.
-*By defualt all methods in Interface are "public & abstract". and we can not change the access modifier from public.
+*Interface contains only method signature not implementations. The class which inherits the interface must give the implementation or should declare itself as abstract class.
+*By default all methods in Interface are "public & abstract". and we can not change the access modifier from public.
 *A class can implement any number of interface but can extend only one class.
 *When an interface wants to inherit other interface it uses extends keyword.
 *Interface can have variable, However that variable must be "public static final"
-*From java8 Interface can have method with boday!!!! and we should use "default" keyword to specify body to a method. We can also use this method in inheritence
+*From java8 Interface can have method with body!!!! and we should use "default" keyword to specify body to a method. We can also use this method in inheritance
 *From java8 Interface can also have static methods.!!! static methods do not takes place in inheritance
-*From java9 Interface can have private methods. Can not be part of inheritence
+*From java9 Interface can have private methods. Can not be part of inheritance
 
 *Functional Interface
 -Interface which has only one method is called Functional Interface
+
+Lambda Expression
+================================
+-Used to give implementation to functional interface
+ex- Runnable r = ()-> System.out.println("Running");
+the above example will override the run method of Runnable interface which is functional interface
+
+-If the method in function interface accepts any parameter we can write lambda like below-
+ex- assume run class accepting some parameter integer i then,
+	Runnable r = i->syso("value is"+i);
+
+
+
+Access Modifiers
+================================
+*Public-participate in Inheritance, Can be accessed from anywhere
+*Protected-participate in Inheritance,Can not be accessed outside the package without relationship otherwise can be accessd anywhere.
+*Default-participate in Inheritance, Can not be accessed outside package.
+*Private- Do not participate in Inheritance, can not be accessed outside the class
+
+
 *Marker Interface/Tagged Interface
 -Interface which does not have any method or which is empty
 
 
 
 Objects&Classes
-=================
+==============================
 Objects
 --------
 *Object class is the parent class of all classes in Java
@@ -138,13 +160,13 @@ final
 ------
 *Final can be applied to field level, method level, class level
 * If final is applied to filed level, variable value can not be changed, if we try so it would result in compile time error
-	For Primitive datatypes values can not be changed and for non primitive referances can not be changed.
+	For Primitive datatypes values can not be changed and for non primitive ,referances can not be changed.
 * If final is applied to method level, we cannot override that method
 * If final is applied to Class level, we can not Inherit that class.
 
 static
 -------
-*static can be applied to variable, method,block
+*static can be applied to variable, method, block
 *static variables can be accessed anywhere 
 *non static variables can not be access inside static method and static block
 *when we apply static to variable/method/block that becomes common /shared by all instances of the class.
@@ -154,38 +176,84 @@ static
 	static method
 *When an entity is static no need to create the object of the class to call it. We can directly call it using class name
 
+*break - When a match is found control will come out of it.
+*continue - we skip that iteration and continue with others.
+
 
 
 Exception Handling
-====================
+=================================
 -Abnormal termination of application in run time is called exception. Its different from Runtime error which occurs due to logical error.
 -There are 2 types of Exception- Checked Exception, Unchecked Exception.
+
 -Which ever the method creates exception, it will create the object of Exception and give it to JVM and JVM gives to Default Exception handler if we not handled the exception.
--We use try and catch block to handle exception. We write the main code inside try and handle in catch block, whenever exception occur lines after the exception in try block will not be executed , insted catch block gets executed.
+
+-We use try and catch block to handle exception. We write the main code inside try and handle in catch block, whenever exception occur lines after the exception in try block will not be executed , insted catch block gets executed.lines below catch also will be executed.
+
 -We can have multiple catch blocks for single try block
 -If a method is giving an exception JVM will check for the method, all method who are calling it and if no method handled it, JVM will give the exception object to Default exception handler.
+
 -When Exception generated we can do 3 things- 1. Handle the exception(try-catch) 2.Duck the Exception(throws)  3. Re throw an exception(try,catch,throw,throws,finally)
+
 -Exception may be compile time exception or runtime exception. In CTE compiler will force u to handle the exception. This is also called Checked Exception. Runtime exceptions are called Unchecked exceptions.
+
 -After handling the exception again throwing the exception to the callers is called re-throwing an exception.We use "throw" keyword to rethrow the exception. and to duck the exception we use throws keyword. throws keyword is used in method signature. whereas throw keyword is used in catch block to rethrow the exception object.After rethrowing the exception we should use throws keyword in method signature.
+
 -When we use throw keyword to rethrow the exception, statements after the throw keyword will not be executed. In this case we use finally block to execute the critical stement irrespective of exceptions handled or throwed does not matter, finally block will be executed.
+
 - finally block will always dominate return statement. If we want to execute anything after return statement we can use finally block.
 -only try we cannot write, either catch or finally must be there.
+
 -only finally/catch block can not be used alone, we must use try block
 -System.exit(0) will dominate the finally block, finally block will not be executed if the method is present.
 -we can write throws keyword in method/constructor signature but not in class signature.
 -Overridden methods can throw only unchecked exception if parent class method does not throws any exception or if parent method has unchecked exception.
 
--We can create our own exception called custom exception.Extending  Exception class, we can create our own exception.
+-We can create our own exception called custom exception. Extending  Exception class, we can create our own exception.
 -We can close the resources in finally block or Resources which we are using are Implementing AutoClosable interface then those resources will close automatically.
--resources used in try with resources are made final . can not alter.
+-resources used in try with resources are made final . can not alter.finally block becommes dummy if we use try with resources.
 -only try block can be written iff, if try with resource is written.
 
+
+
+
+Wrapper Classes
+=========================
+-To wrap the primitive datatypes we have wrapper classes
+- Almost Every Wrapper classes contains 2 constructors(byte,short,int,long,double,float)
+	*primitive type as argument
+	*String type as argument- If string input is not properly formatted to number, it will throw an exception NumberFormatException
+-For Character class, it has only one constructor, which can take only primitive arguement type.
+-For Boolean class, primitive parameter should be passed as either true or false in constructor, otherwise Compile time error
+	For Constructor which takes string as arguement, "True"(or Case insensitive trUe), "true" only results in true otherwise it will return false.
+-toString and equals method of Object class is ovverridden in Wrapper classes.
+- 4 important methods of wrapper classes are -  toString()- To convert Wrapper/primitive to string.
+						valueOf()-Primitive/string to Wrapper object.
+						XXXValue()- Wrapper object to primitive.
+						parseXXX()- Every Wrapper class except Character contains parseXXX to convert String corresponding primitive type
+					
+
+
+======================================
+Var Args- Variable length arguments
+=======================================
+*If we want to pass multiple data of same types in a method we can use VarArgs using ...
+ex- public int add(int ... nums){
+		--logic for array nums to add numbers--
+	}
+when calling the above method we can directly pass multiple interger type data like, add(3,4,5,6,7,8);
+Internally these numbers will be converted into array. 	
+
+
+
+
+
 Multithreading
-===================
+==================================
 - Single threaded programs will waste the CPU time cycle so we go to the concept of multithreading.
--We can create Threads using 2 ways
+- We can create Threads using 2 ways
 	* Extending Thread class
-	*Implementing Runnable interface- functional interface having run() method
+	* Implementing Runnable interface- functional interface having run() method
 -Thread class implements Runnable Interface
 
  *****Extending Thread class*****
@@ -212,16 +280,21 @@ eg-
 	}
 
 -Among these 2 methods,implementing Runnable is better because, If a class extends Thread class then it can not extend any other class.
+
 -If we call run method instead of start method, program will behave like a single threaded program. because run method can not give control to TS.
 -we can give name to thread by using setName() method. t1.setName("thread1");
+
 -isAlive() method- it is used to check if the thread is alive or not, this method will return boolean value
 -join() method - it is used to make a thread wait for another thread. for ex. if main thread is running and if we say t1.join() where t1 is a object of Thread, then main method will wait until the t1 thread completes.
+
 -we can set priority to a thread using setPriority() method. Higher the number higher the priority.
 -Race condition - Its a phenomenon in multithreading in Java where multiple threads will race towards CPU time life cycle to complete its work without caring other threads. To overcome we have the concept of Syncronization.
 -To achieve syncronization we use synchronized key word at block/method level. Whenever we apply synchronized to a method or block only one Thread can use it at a time. thus Race condition problem is resolved.
 -synchronized methods are slower but thread safe.
--If we use non synchronized method to use by many Threads that leads to data inconsistency. So we arrive at synchronized method.
+
+-If we use non synchronized metho	d to use by many Threads that leads to data inconsistency. So we arrive at synchronized method.
 -synchronized with static method is class level lock and synchronized with non-static methd is a object level lock
+
 - States of Thread -> New - Runnable - Running - Dead
 	* while in Running state it can go to sleep state(when sleep method is called), block state(when required resources are not avialable) and wait state(when wait method is called)
 	*thread will come to Runnable again comes out of sleep(when sleep time is over), block state(when required resource is avialble) and wait(when notify(),notigyAll() methods are called.
@@ -232,20 +305,10 @@ eg-
 -There is concept of Daemon thread, which means which is not important thread, By default in Java, all threads created are Non-Daemon threads, However we can change it, but we can not make main thread as Daemon thread. 
 
 
-==============
-Var Args- Variable length arguments
-==============
-*If we want to pass multiple data of same types in a method we can use VarArgs using ...
-ex- public int add(int ... nums){
-		--logic for array nums to add numbers--
-	}
-when calling the above method we can directly pass multiple interger type data like, add(3,4,5,6,7,8);
-Internally these numbers will be converted into array. 	
-
 
 
 Nested Class
-============================
+======================================
 -Class inside a class is called Nested  class.
 -Nested class is divided into 2 types
 -1.Static nested class 2. Inner class
@@ -253,64 +316,88 @@ Nested Class
 
 
 Anonymous Inner Class
-==================
+================================
 -It is a class without a name
 -Can be applied to any interface or any abstract class/concrete class also
 -We give the implementation for a class method/s while createing the object of that class/interface
 
 
 
-Lambda Expression
-====================
--Used to give implementation to functional interface
-ex- Runnable r = ()-> System.out.println("Running");
-the above examble will override the run method of Runnable interface which is functional interface
-
--If the method in function interface accepts any parameter we can write lambda like below-
-ex- assume run class accepting some parameter integer i then,
-	Runnable r = i->syso("value is"+i);
-
-
-
-Access Modifiers
-===================
-*Public-participate in Inheritance, Can be accessed from anywhere
-*Protected-participate in Inheritance,Can not be accessed outside the package without relationship otherwise can be accessd anywhere.
-*Default-participate in Inheritance, Can not be accessed outside package.
-*Private- Do not participate in Inheritance, can not be accessed outside the class
-
-
-
-Wrapper Classes
-
-
 Collections
-=================
-*Disadvantages of Array - Continueos memory allocation, fixed size, it can hold only homogenous type of data.
-*Advantages of Arrays over ArrayList - Faster and efficient , when the size is known use array, homogenous.
+====================
+*Array are fixed in size and only homogeneous type of data can be added. In collection hetrogenous type of data can be added and it will grow dynamically as we add the object.
+
+List- ArrayList, LinkedList
+Queue - ArrayDeque, PriorityQueue
+Set - TreeSet, HashSet, LinkedHashSet
+Map
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 
 Enum
-=============
+======================
+*Enums are group of predefined constants. It was introduced in java 1.5
+*We can create our own type of data.
+*By default ENUMs are public static and final.
+*Like class and interfaces , separate .class will be created when we create an ENUM.
+*We can have fields, methods, Constructors inside ENUMs like class.
+
+
 
 Annotations
-==============
-
+======================	
+*It is a extra information that can be added to class, method, interface, enum, constructor, local variables or field.
+*There are many inbuilt annotations. We can also create our own custom annotations
+*Annotations which does not take any values are marker annotations, there are single value and mutli value annotations also.
+*Annotation is a parent of all annotations
+*To Create Custom annotations -
+-we add @infront of interface 
+-@Target and @RetentionPolicy must be defined
+-Target - class/method/iterface so on, Retention -
+-Ex-
+@Target(ElementType.TYPE)// TYPE is for class
+@Retention(RetentionPolicy.RUNTIME)
+@interface CricketPlayer{
+}
 
 Producer & Consumer Problem
 Stream API
-File Handling
-===================
-File- when we create a object of File it jus refer to a file
-*to create that file/directory we should call createFile method
-*Constructors- File(String s), File(String,File), File(String,String)
-*we can use list() method to list all files in a directory
-*isExists(),isFile(),isDirectory() are methods to verify.
 
+
+File Handling
+=========================
+File- 
+*when we create a object of File , physical file will not be created. it just refers to a file
+*To create that file, we should call createFile() method. ---> File f = new File("abc.txt"); f.createFile();
+*To Create directory we use mkdir() method
+*Constructors- File(String s), File(String,String), File(File,String)
+*Eg- File f1 = new File("IplTeams"); f1.mkdir(); File f2 = new File(f,rcb.txt); f2.createFile();
+*we can use list() method to list all files in a directory
+*exists(),isFile(),isDirectory() are methods to verify.
+
+
+
+FileWriter
 FileReader
-*
+BufferedWriter
+BufferedReader
+
+
 
 FileWriter- when we create a object directly creates file to write. If the file exists it will reuse the same file and override the content.
 *If override is the content is not equal use Constructor FileWriter("info.txt",false)
@@ -320,80 +407,318 @@ FileWriter- when we create a object directly creates file to write. If the file 
 
 
 
+Serialization and Deseralization
+=========================================
+Serialization - Its a process of representing the state of an object over a network or file. Or converting state to non java supported formats which can be understood by network or file. Deserialization is exact reverse of it.
+-We use FileOutputStream or ObjectOutputStream to achieve serialization.
+-Deserialization can be achived by FileInputStream and ObjectInputStream.
+-We have to make the data which we are sending as Serializable by implementing marker interface Serializable.
+-If we serialize tranisent property it will provide the default value for that property. Real value will not be serialzed.
+-If we make a property as static transient, transient has no value
+-If we make a property as final transient, transient has not value
+-So to make a property as secured only transient keyword has to be used alone.
 
 
-Advanced Java
---------------------
+
+
+
+
+
+
+
+
+
+-----------------------------------------
 JDBC
+-----------------------------------------
+* 6 Steps to Connect Database to Java Application
+1.Load and Register the driver- From jdbc4 this step is not required.
+	Driver driver = new Driver();
+	DriverManager.registerDriver(driver);
+
+url = "jdbc:mysql://localhost:3306/dbname"
+2.Establish a connection between Java Application and Database
+	Connection connection = DriverManager.getConnection(url,user,pw);
+
+3.Create the statement object/ PreparedStatement Object
+	Statement statement = connection.createStatement();
+			or
+	PreparedStatement pstmt = connection.prepareStatement(sqlQuery);
+	
+
+4.Process and execute the query
+	statement.executeQuery/statement.executeUpdate(sqlQuery);
+				or
+	pstmt.executeQuery();
+5.Process the Result from ResultSet.
+6.Close the connection
+	connection.close();
+
+
+select query - executeQuery();
+non select - executeUpdate();
+execute() - for both
+
+SQL Injection
+==========================
+
+-- -> this is the symbol to comment out sql single line.
+so we use prepared statement to pass the input at runtime.
+
+
+java.util.Date - Wed Jul 31 21:32:20 IST 2024
+java.sql.Date - 2024-07-31
+
+User(String) -java.text.SimpleDateFormat - java.util.Date - java.sql.Date - pstmt.setDate() - DB
+
+
+BLOB- Binary Large Object
+CLOB- Character Large Object
+Connection Pooling
+======================
+-Creationg and destruction of connection object is difficult.
+-so javax.sql.DataSource interface gives connection pool interface. DB vendors give implemention to this. When user wants to talk to DB he will use this connection pool objects.
+-When we use connection.close in normal way connection will be closed. But in connection pooling if close the connection, that connection go back and sit in connection pooling.
+
+
+
+Transaction
+java.sql.RowSet
+
+
+
+
+
+
+
+
 Servlets
+===================
+-There is no main method while writing servlets because, its a web application single threaded programs are not good. So in server , server maintains something called as Thread pool, when user requests it will provide one thread.
+
+Servlet(I)- init(),service,deinstantiation(),getServletInfo(),getServletConfig()
+
+GenericServlet(AC)- only service method is abstract
+HttpServlet(AC)- extends GenricServlet
+-HttpServletRequest(I)
+-HttpServletResponse(I)
+-HttpSession(I)
+-HttpServlet(C)
+-Cookie(C)
+
+HTTP Protocol Request-
+-----------------------------
+*Request Line- HTTP Method(GET/POST...) -Requested Resource(/test) - protocol version(HTTP/1.1)
+*Request Headers- Browser details and its language format and so on...
+*Request Body- Contains user information.(User supplied info)
+
+HTTP Protocol Response -
+----------------------------
+*Status Line- Protocol Version(HTTP/1.1/) -- status code(200)-Description of code(OK)
+	1XX - Informational
+	2XX - Successful
+	3XX - Redirection
+	4XX - Client Error
+	5XX - Server Error
+*Response Headers- MIME(Multipurpose Internet Mail Exchange)- Content type, content length, modified date etc..
+*Response Body- Actual Information which will be displayed to the user.
+
+Types of HttpRequest Methods
+--------------------------------
+GET - Get Information from server/ Can be bookmarked / request data is visible in address bar so not secured / Query String is sent is Request Line/ Request Body is empty./ It is Idempotent
+POST- Send information to server/ Can not be bookmarked / request data is not visible so its secured. / Query String is sent in Request Body/ Its is non Idempotent
+
+PUT- Update Information in server
+DELETE
+HEAD
+OPTIONS
+TRACE
+
+-HttpServlet Class does not contain any abstract method but still it is made as abstract because, one should not create the object directly from HttpServlet class, only object should be created from the class which extends HttpServlet.
+
+
+
+
+
+
+
+
+
+
+
+
+
 Hibernate
+
+
+
 Spring Core
+----------------------
+Cohesion - One class must be given only one responsibility. Cohesion must be high.
+Coupling - Always try to achieve loose coupling.
+
+
+Inversion Of Controller (IOC) - Usually we create the object and give it to JVM during the runtime. But here the flow is inverted, i.e IoC container gives the objects when we need in our application. Containers manages the lifecycle of all beans/objects. But we need to configure the container. configuration contains all the dependencies and all.
+
+Depenedncy Injection -
+*It is a process of defining the dependencies of a bean to another.
+*2 Main types of dependency Injection - Constructor Based DI, Setter Based DI
+*Its good to use Constructor Injection for mandatory dependencies and for non mandatory dependencies setter injections are preffered.
+*Circular dependcies are not recommended.
+
+Spring Container Configuration can be done in 4 ways-
+-XML configuration
+-Annotation Based Configuration
+-Pure Java Configuration
+-Spring boot Auto configuration
+
+-Autowire - 
+*Assiging the Dependent class to the Target class using autowire attribute. autowaire automatically search the beans based on values
+*Autowire will take 3 values - byName , byType , constructor
+*byName - Performs setter injection, and search for the name of the bean which is same as Dependent class name object in the Target class
+
+	<bean id="dev" class="com.ravishworks.beans.Development" autowire="byName">
+		<property name="lang" value="Java"></property>
+	</bean>   
+	
+	<bean id="com" class="com.ravishworks.beans.Laptop"/>
+	<bean id="desk" class="com.ravishworks.beans.Desktop"/>
+	<bean id="mob" class="com.ravishworks.beans.Mobile"/>
+
+ *byType - Performs Setter Injection, and search for the type of the bean which is same as Dependent class object's type in the Target class
+	<bean id="dev" class="com.ravishworks.beans.Development" autowire="byType">
+		<property name="lang" value="Java"></property>
+	</bean>   
+	
+	<bean id="com" class="com.ravishworks.beans.Laptop"/>
+	<bean id="desk" class="com.ravishworks.beans.Desktop" primary="true"/>
+	<bean id="mob" class="com.ravishworks.beans.Mobile"/>
+
+*constrcutor- performs Constructor Injection, then applies byType to the arguemnt passed to the constrcutor of Target Class
+
+
+*Important Annotations
+-@Component- Sterotype annotations , can be applied at the class level to inform container that this class's object is needed.
+-@Service- Applied to service layer class @Component + Transcational logic/ Business logic
+-@Repository - Applied to DAO layer class. @Component + SQL support
+-@Controller - Applied to controller class. @Component + Controller
+-@RestController
+-@Scope- To define the scope of the class we use this annotation. @Scope("prototype")
+-@Autowired- Can be applied toconstructor, setter or filed for which field needs to injected.
+-@Bean-
+-@Configuration- Applied at class level, to make a class as configuration class.
+-@Qualifier- Can be used along with Autowired to specify which class's bean needs to be injected
+-@Lazy- To apply lazy loading.
+-@Primary- To make a one bean primary if there are multiple beans of same type. But Qualifier will be given preferance if both are present.
+-@PropertySource-  should be applied at class level to tell the location of property file- @PropertySource(value = ("application.properties"))
+-@Value - to fetch value from property file - @Value("${mobileName}")- apply to field.
+-@ConfigurationProperties(prefix = "")
+
+
+
+
+
+*To do annotations based configuration, we have to use xml  and need to pass <context:component-scan base-package="com.ravishworks.beans"/>
+
+
+
 Spring Boot
--Spring JDBC
--Spring Data JPA
+-SpringBoot JDBC
+*All JDBC related boiler plate codes will be removed in this module of spring.
+*We use JdbcTemplate object to inject to DAO to  Work with SpringBootJDBC
+
+
+
+-SpringBoot Data JPA
+-------------------------------
+*CrudRepository
+*PagingAndSortingRepository
+*JpaRespository
+
 -Spring Security
 -Spring MVC
+
+
+-Spring AOP
+==========================
+Aspect- Additional service class
+Advice- Additional service methods.
+Pointcut-  Which methods in Business logic needs advices .
+Joinpoint - It will say which advices needs to be be joined to pointcut methods.
+
+Target - Which all business classes needs advices
+Weaving-
+Proxy -
+
+
+
+@Aspect
+@Before
+@After
+@Around
+@AfterReturning
+@AfterThrowing
+@PointCut 
+
+
+
 -Spring Rest
+====================================
+@RestController - @Controller + @ResponseBody
+@PathVariable
+@RequestParam
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Microservices
+
 
 
 
 
 Agile 
 ---------------------
+*Agile is iterative(repeating the same process) and incremental(adding new features) model.
+*Agile Principles 
+-Customer no need to wait for long time
+-We develop and test and release, a piece of software to the customer with few number of features.
+-We can accept / accomodate requirement changes.
+Termoniologies in Agile
+*User Story : A feature or a model in a software
+*Epic : Collection of user story
+*Product backlog : Contains list of user stories prepared by product owner at the starting.
+*Sprint : Period of time required to complete user stories, decided by the product owner and team. usually 2- 4 weeks of time.
+*Sprint planning meeting : meeting conducts with the team to define what can be delivered in the spirnt and duration.
+*Sprint backlog : List of comitted stories by Dev/QA team for specific sprint.
+*Scrum Meeting : Meeting conducted by scrum master everyday for 15 min. standup meeting.
+*Spring Retrospective Meeting : Conducts meeting after completion of sprint.
+*story point : Rough estimation of user stories, given by Dev/QA team in fibonocci series.
 
 
 
+Scrum
+----------------------
+*It is a framework which we build  software product by following Agile principles.
+*Product owner, Scrum master, Dev team, QA Team
 
-
-
-Data Structures and Algorithms in Java
-===========================================
-Linear
--Static
-	-Array
--Dynamic
-	-Linkedlist
-	-Queue
-	-Stack
-Non-Linear
-	-Tree
-	-Graph
-
-
-Spring And Spring Boot
-================================
-Spring - Spring Core, Spring Test, Cross Cutting Concerns, MVC, Database - There are lot of modules for each category.
-*Spring will manage objects instead of us and give the objects whenever we need, this is done using container which is called IoC Inversion of Control.
-*BeanFactory and ApplicationContext are 2 containers. ApplicationContext is the latest one.
-*We can configure our container in 4 ways
-	-Using XML approach
-	-Using Annotations approach
-	-Using pure java approach
-	-Using Spring Boot autodriven approach
-
-*Dependency Injection- We can achieve dependency injection using 3 method
-	-Setter Innjection
-	-Constructor Injection
-	-Field Injection-not recomended
-
-*Container Configuration Using XML approach
--setter injection
--Constructor Injection
-
-*Container Configuration using Annotations
--@Component - Its a class level annotations which makes the class as the bean @Component("emp")
--@Autowired- It is used to inject the bean automatically. Can be used with Field,setter,constuructor injection.
--@Qualifier- This annotation is used in conjunction with Autowired to remove confusion between 2 beans of same type.
--@Primary- This is annotation makes a bean with higher prferenace when there are 2 beans of same types. Its similiar to Qualifier. but We use Primary is the bean class , whereas we use Quaifier with Autowired in the Target class.
--@Controller-It will make the class as Component and can be used for controller classes.
--@Service-It will make the class as Component and can be used for Service layer classes.
--@Repository-It will make the class as Component and can be used for DAO Layer classes.
--@RestController
-
-
-
-
-
-
-
+*Roles - Product Owner, Scrum master, Team
+*Artifacts - Product backlog, burndown chart
+*Ceremonies - Sprint Planning, Sprint review, Daily scrum,
