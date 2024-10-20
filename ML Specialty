@@ -122,11 +122,25 @@ Feature Engineering
 
 4. Data Analysis and Visualization
 ========================================
+-Use some Developer tools or BI tools to visualize.
 - Amazon Quicksight - It is a business Intelligence tool helps to visualize data from the given dataset.
 *Relationships
+-Scatter plots- Any relationship between 2 attributes
+-Bubble plots- Relationship between 3 attributes.
+-We can see wheather we have +ve , -ve or no co relation between attributes.
+
 *Comparisions
+-Bar charts-
+-Line charts - 
 *Distributions
+-Histograms
+-Box Plots
+-Scatter plots
+
 *Compositions
+-Pie Charts
+-Stacked Area Charts
+-Stacked Column charts
 
 
 
